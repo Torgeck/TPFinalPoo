@@ -1,0 +1,128 @@
+# Gestor de empleos
+
+## Manual de usuario
+
+## Indice
+
+1. Pantalla de bienvenida
+2. Registrar postulantes
+3. Registrar Empresas solicitantes
+4. Registrar Solicitudes
+5. Ver propuestas
+6. Generar listados
+
+### 1) Pantalla de Bienvenida
+
+Abrir el playground de pharo y ejecutar el siguiente código:
+
+```smalltalk
+a := GestorEmpleos crear.
+
+b := GestorEmpleosVisual crear: a.
+```
+
+Se abrirá una ventana como la siguiente:
+![PantallaBienvenida][pantallabienvenida]
+En la pantalla de bienvenida del gestor nos encontramos con una tabla que nos muestra la cantidad actual de postulantes, propuestas y empresas solicitantes que se encuentran actualmente en el gestor. Al lado de la tabla tenemos botones y la fecha actual del gestor. Cada botón nos brinda alguna acción:
+
+- "**Registrar**" podremos registrar postulantes, solicitudes y solicitantes.
+- "**Propuestas**" podremos ver y generar nuevas propuestas, ademas de poder aceptarlas y hacer un control de fraude sobre ellas.
+- "**Generar Listados**" es utilizado para generar distintos listados sobre las solicitudes y empresas solicitantes.
+- Por ultimo tenemos "**Iniciar Dia**" que al hacer click sobre el como bien indica, iniciaremos un día nuevo. Este cambio se vera reflejado tanto en la fecha que se muestra sobre el como en todo el gestor.
+
+### 2) Registrar Postulantes
+
+Para registrar postulantes hacemos click en el botón **Registrar**, a continuación aparecerá una ventana como la siguiente:
+
+![OpcionesRegistrar][opcionesregistrar]
+
+Seleccionamos **Registrar postulantes** y se abrirá una ventana que contiene una tabla y 3 botones para registrar distintos tipos de postulantes
+![VentanaPostulantes](Manual%20usuario/ventanaPostulantes.png)
+
+- **Persona** abrirá un formulario para registrar una persona.
+- **Empresa Servicio** abrirá un formulario para registrar una empresa de servicio.
+- **Empresa Combinada** abrirá un formulario para registrar una empresa combinada (servicio y producto).
+
+Dependiendo cual se elija saldrá un formulario para completar los diferentes campos de cada postulante, similares al siguiente:
+
+![FormularioPostulante](Manual%20usuario/FormularioPostulante.png)
+
+Una vez completado todos los campos del formulario, podremos registrar al postulante pulsando el botón **Registrar** y este aparecerá en la tabla de la ventana anterior. O bien si nos hemos equivocado de formulario podremos pulsar cancelar para cerrarlo.
+
+### 3) Registrar Empresas Solicitantes
+
+Para registrar Empresas solicitantes clickeamos en **Registrar**
+![PantallaBienvenida]
+
+Luego seleccionamos la opción: **Registrar solicitudes / empresas solicitantes**
+![opcionesregistrar]
+
+Finalmente aparecerá una ventana como la que se muestra a continuación:
+![VentanaSolicitante](Manual%20usuario/ventanaSolicitantes.png)
+
+Contiene dos tablas, la superior se encarga de mostrar las empresas solicitantes en el sistema, la inferior se encarga de mostrar las solicitudes que contiene alguna empresa seleccionada en la tabla anterior.
+
+También hay 4 botones:
+
+- **Registrar Empresa** como lo dice el botón sirve para registrar empresas solicitantes
+- **Mostrar Solicitudes**, al tener una empresa seleccionada este mostrara las solicitudes en la segunda tabla si es que tiene.
+- **Registrar Solicitud** al hacer click en este botón podremos registrar los distintos tipos de solicitudes para una empresa previamente seleccionada en la tabla superior.
+- **Revalidad Solicitud**, revalida una solicitud selecciona por una cantidad de días siempre y cuando su estado figure como vencida.
+
+Para registrar una empresa solicitante hacemos click en **Registrar Empresa** y nos saldrá un formulario como el siguiente:
+
+![FormularioSolicitante](Manual%20usuario/formularioSolicitante.png)
+
+Como los formularios anteriores al hacer click en **Cancelar** cerrara el formulario y hacerlo en **Registrar** sera registrada en el sistema y luego se mostrara en la primer tabla.
+
+### 4) Registrar solicitudes
+
+Para registrar solicitudes seleccionamos una empresa en el sistema y hacemos click en el botón **Registrar Solicitud**.
+![VentanaSolicitudesSeleccionada](Manual%20usuario/ventanaRegistroSolicitantes.png)
+
+A continuación aparecerá una ventana con los diferentes tipos de solicitudes a registrar:
+![opcionesSolicitudes](Manual%20usuario/OpcionesSolicitudes.png)
+
+Al seleccionar cualquiera de las opciones nos aparecerá un formulario para completar similar al siguiente:
+
+![formularioSolicitudes](Manual%20usuario/formularioSolicitud.png)
+
+Al igual que los formularios anteriores para registrar la solicitud presionaremos el botón **Registrar** y para cerrar el formulario haremos click en **Cancelar**.
+
+### 5) Ver propuestas
+
+Para ver, generar y aceptar propuestas hacemos click en **Propuestas**
+![pantallabienvenida]
+
+Luego aparecerá una ventana similar a la siguiente:
+![ventanaPropuestas](Manual%20usuario/ventanaPropuestas.png)
+
+Contiene una tabla que mostrara las propuestas que se encuentran actualmente en el sistema y una serie de botones:
+
+- **Aceptar propuesta** como lo dice el botón se aceptara la propuesta seleccionada en la tabla.
+- **Control de fraude**, checkea todas las propuestas del sistema para detectar fraude. En caso de encontrar fraudes los elimina e informa al usuario la cantidad de fraudes a través de una alerta.
+- Por ultimo **Generar propuestas** genera nuevas propuestas para las solicitudes pendientes, si es que hay postulantes que sean validos con las solicitudes pendientes.
+
+### 6) Generar listados
+
+Para abrir la ventana para generar listados hacemos click en **Generar Listados**
+
+![pantallabienvenida]
+
+Nos aparecerá la siguiente ventana:
+![VentanaListados](Manual%20usuario/ventanaListados.png)
+
+Con una tabla que nos mostrara los listados y 3 botones:
+
+- **Solicitudes Pendientes** generara listados con las solicitudes pendientes por fecha de registro o por empresa solicitante.
+- **Solicitudes Atendidas** generara listados con todas las solicitudes resueltas que se encuentran en el sistema.
+- **Empresas Solicitantes** generara un listado con las empresas solicitantes poniendo ordenadas por cantidad de solicitudes resueltas.
+
+Al hacer click en **Solicitudes Pendientes** nos saldrán dos opciones:
+![opcionesListados](Manual%20usuario/solicitudesPendientesListado.png)
+
+- Si elegimos la primer opción, nos saldrá otra ventana para elegir entre todas las empresas en el gestor. Al seleccionar alguna empresa, se mostraran todas sus solicitudes pendientes en la tabla ![ListarPorEmpresa](Manual%20usuario/listadoSolicitudesDeEmpresa.png)
+- Si elegimos la segunda opción, nos saldrá una ventana para que ingresemos una fecha de registro. Al ingresar una fecha se mostraran en la tabla todas las solicitudes que fueron registradas ese dia. ![listaPorFecha](Manual%20usuario/listadoPorFecha.png)
+
+[opcionesregistrar]: Manual%20usuario/botonRegistrar.png
+[pantallabienvenida]: Manual%20usuario/GestorEmpleos.png
